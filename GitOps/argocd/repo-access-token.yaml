@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Secret
+metadata:
+  name: argocd-repo-access-token
+  labels:
+    argocd.argoproj.io/secret-type: repository
+stringData:
+  url: https://github.com/AmrFawzymoh/microservices-private-demo.git
+  password: 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
+  username: not-used

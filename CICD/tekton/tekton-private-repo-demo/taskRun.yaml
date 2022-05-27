@@ -1,0 +1,23 @@
+apiVersion: tekton.dev/v1alpha1
+kind: TaskRun
+metadata:
+  name: build-docker-image-from-git-source-task-run-private
+spec:
+  serviceAccountName: tekton-sa-private
+  taskRef:
+    name: build-docker-image-from-git-source-private
+  inputs:
+    resources:
+      - name: git-source
+        resourceRef:
+          name: git-source-private
+    params:
+      - name: pathToDockerFile
+        value: Dockerfile
+      - name: pathToContext
+        value: /workspace/git-source/src/frontend
+  outputs:
+    resources:
+      - name: builtImage
+        resourceRef:
+          name: docker-target-private
