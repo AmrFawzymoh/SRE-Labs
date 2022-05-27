@@ -5,6 +5,6 @@ metadata:
   labels:
     argocd.argoproj.io/secret-type: repository
 stringData:
-  url: <Your_GitHub_Repository_URL>
+  url: https://github.com/AmrFawzymoh/microservices-private-demo.git
   password: <Your_GitHub_Access_Token>
   username: not-used
